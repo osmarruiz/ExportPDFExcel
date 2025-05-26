@@ -1,0 +1,76 @@
+# Directorios de compilación y objetos
+bin/
+obj/
+
+# Paquetes NuGet
+packages/
+
+# Archivos de Rider (IDE)
+*.iml
+.idea/
+_ReSharper.Caches/
+
+# Archivos de Visual Studio
+.vs/
+*.suo
+*.user
+*.pdb
+*.log
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.tlog
+*.vcproj.filters
+*.vcxproj.user
+*.obj
+*.aps
+*.bsc
+*.sbr
+*.ipch
+_UpgradeReport_Files/
+install.log
+msbuild.log
+*.docstates
+*.vsp
+*.vspx
+*.psess
+*.vmdl
+*.mdf
+*.ldf
+*.ndf
+*.config.user
+*.csdproj.user
+*.csproj.user
+*.vbproj.user
+*.webinfo
+
+# Archivos de configuración específicos del entorno (que contienen secretos o son locales)
+appsettings.Development.json
+appsettings.Staging.json
+appsettings.Production.json
+appsettings.*.user.json # Si usas archivos de usuario locales
+web.Debug.config
+web.Release.config
+*.bak
+*.orig
+*.rej
+*.swo
+*.swp
+*.tmp
+*~
+
+# Archivos de paquetes npm/node (si usas frontend con Node.js)
+node_modules/
+
+# Archivos de compilación de frontend (si usas frameworks como React/Angular/Vue)
+wwwroot/dist/
+
+# Archivos de pruebas
+TestResults/
+
+# Otros archivos generados
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
