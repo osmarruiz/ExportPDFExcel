@@ -1,4 +1,4 @@
-﻿# 📊 ExportPDFExcel: Generación de Reportes en .NET MVC con PostgreSQL, ClosedXML y QuestPDF
+# 📊 ExportPDFExcel: Report Generation in .NET MVC with PostgreSQL, ClosedXML and QuestPDF
 
 ![.NET Version](https://img.shields.io/badge/.NET-8.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -7,40 +7,39 @@
 ![NuGet Dapper](https://img.shields.io/nuget/v/Dapper)
 ![NuGet Npgsql](https://img.shields.io/nuget/v/Npgsql)
 
-¡Bienvenido a **ExportPDFExcel**!  
+Welcome to **ExportPDFExcel**!
 
-Este es un proyecto de ejemplo que demuestra cómo construir una aplicación web ASP.NET Core MVC desde cero, integrando una base de datos PostgreSQL para la gestión de datos y utilizando **ClosedXML** y **QuestPDF** para la generación flexible de reportes en formatos **Excel y PDF**, tanto con y sin parámetros.
+This is a sample project that demonstrates how to build an ASP.NET Core MVC web application from scratch, integrating a PostgreSQL database for data management and using **ClosedXML** and **QuestPDF** for flexible report generation in **Excel and PDF** formats, both with and without parameters.
 
+### 🎯 Flexible Report Generation
 
-### 🎯 Generación de Reportes Flexible
-
-- **Sin Parámetros**: Obtén todos los datos de una tabla para un reporte completo.
-- **Con Parámetros**: Filtra los datos del reporte según criterios específicos  
-  (ej. stock mínimo de productos, rango de fechas de clientes).
+- **Without Parameters**: Get all data from a table for a complete report.
+- **With Parameters**: Filter report data according to specific criteria
+  (e.g., minimum product stock, customer date range).
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
 - .NET 8.0 SDK
 - ASP.NET Core MVC
 - PostgreSQL
-- Npgsql (ADO.NET Data Provider para PostgreSQL)
+- Npgsql (ADO.NET Data Provider for PostgreSQL)
 - Dapper
 - ClosedXML
 - QuestPDF
 
 ---
 
-## ⚙️ Configuración del Entorno
+## ⚙️ Environment Setup
 
-### 1. Base de Datos PostgreSQL
+### 1. PostgreSQL Database
 
-Asegúrate de tener un servidor PostgreSQL en funcionamiento.  
-Crea la base de datos `ExportPDFExcel` y ejecuta el siguiente script:
+Ensure you have a PostgreSQL server running.
+Create the `ExportPDFExcel` database and execute the following script:
 
 ```sql
--- Crear la tabla Productos
+-- Create Products table
 CREATE TABLE Productos (
     Id SERIAL PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
@@ -49,15 +48,15 @@ CREATE TABLE Productos (
     Stock INT NOT NULL
 );
 
--- Insertar datos de ejemplo
+-- Insert sample data
 INSERT INTO Productos (Nombre, Descripcion, Precio, Stock) VALUES
-('Laptop Dell XPS 13', 'Potente laptop con pantalla InfinityEdge', 1500.00, 50),
-('Monitor LG Ultrafine', 'Monitor 4K para profesionales', 600.00, 30),
-('Teclado Mecánico HyperX', 'Teclado para gaming con retroiluminación RGB', 120.00, 100),
-('Mouse Logitech MX Master 3', 'Mouse ergonómico y personalizable', 90.00, 75),
-('Webcam Logitech C920', 'Webcam Full HD para videollamadas', 70.00, 60);
+('Laptop Dell XPS 13', 'Powerful laptop with InfinityEdge display', 1500.00, 50),
+('Monitor LG Ultrafine', '4K monitor for professionals', 600.00, 30),
+('HyperX Mechanical Keyboard', 'Gaming keyboard with RGB backlight', 120.00, 100),
+('Mouse Logitech MX Master 3', 'Ergonomic and customizable mouse', 90.00, 75),
+('Webcam Logitech C920', 'Full HD webcam for video calls', 70.00, 60);
 
--- Crear la tabla Clientes
+-- Create Customers table
 CREATE TABLE Clientes (
     Id SERIAL PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
@@ -66,16 +65,16 @@ CREATE TABLE Clientes (
     FechaRegistro DATE DEFAULT CURRENT_DATE
 );
 
--- Insertar datos de ejemplo
+-- Insert sample data
 INSERT INTO Clientes (Nombre, Apellido, Email) VALUES
-('Juan', 'Perez', 'juan.perez@example.com'),
-('Maria', 'Gomez', 'maria.gomez@example.com'),
-('Carlos', 'Ramirez', 'carlos.ramirez@example.com');
+('John', 'Doe', 'john.doe@example.com'),
+('Mary', 'Smith', 'mary.smith@example.com'),
+('Charles', 'Johnson', 'charles.johnson@example.com');
 ```
 
-### 2. Configuración del Proyecto ASP.NET Core
+### 2. ASP.NET Core Project Configuration
 
-Edita el archivo `appsettings.Development.json` con tu cadena de conexión PostgreSQL:
+Edit the `appsettings.Development.json` file with your PostgreSQL connection string:
 
 ```json
 {
@@ -87,18 +86,18 @@ Edita el archivo `appsettings.Development.json` con tu cadena de conexión Postg
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Host=localhost;Port=5432;Database=ExportPDFExcel;Username=postgres;Password=tu_contraseña_postgres"
+    "DefaultConnection": "Host=localhost;Port=5432;Database=ExportPDFExcel;Username=postgres;Password=your_postgres_password"
   }
 }
 ```
 
-> 🔐 **¡Importante!** Reemplaza `tu_contraseña_postgres` por tu contraseña real de PostgreSQL.
+> 🔐 **Important!** Replace `your_postgres_password` with your actual PostgreSQL password.
 
 ---
 
-## 📦 Instalación de Dependencias
+## 📦 Dependencies Installation
 
-Si creaste el proyecto desde cero, instala los paquetes necesarios:
+If you created the project from scratch, install the required packages:
 
 ```bash
 dotnet add package Npgsql
@@ -109,9 +108,9 @@ dotnet add package QuestPDF
 
 ---
 
-## 🚀 Ejecución del Proyecto
+## 🚀 Project Execution
 
-Abre el proyecto en **Visual Studio** o **VS Code** y ejecuta los siguientes comandos:
+Open the project in **Visual Studio** or **VS Code** and run the following commands:
 
 ```bash
 dotnet restore
@@ -119,17 +118,17 @@ dotnet build
 dotnet run
 ```
 
-Navega a:
+Navigate to:
 
 ```
 https://localhost:XXXX
 ```
 
-Reemplaza `XXXX` por el puerto que indique la consola.
+Replace `XXXX` with the port shown in the console.
 
 ---
 
-## 📄 Estructura del Proyecto
+## 📄 Project Structure
 
 ```
 ├── Models/
@@ -162,19 +161,19 @@ Reemplaza `XXXX` por el puerto que indique la consola.
 
 ---
 
-## 🤝 Contribuciones
+## 🤝 Contributions
 
-¿Tienes sugerencias o quieres mejorar este proyecto?  
-¡Abre un issue o envía un pull request!  
-Tu colaboración es más bienvenida que el café de lunes.
-
----
-
-## 📚 Licencia
-
-Este proyecto está disponible bajo licencia MIT.  
-¡Úsalo, mejóralo y compártelo sin miedo!
+Have suggestions or want to improve this project?  
+Open an issue or send a pull request!  
+Your collaboration is more welcome than Monday coffee.
 
 ---
 
-¡Espero que este proyecto te sea útil para implementar la generación de reportes en tus propias aplicaciones ASP.NET Core!
+## 📚 License
+
+This project is available under the MIT license.  
+Use it, improve it, and share it fearlessly!
+
+---
+
+Hope this project helps you implement report generation in your own ASP.NET Core applications!
