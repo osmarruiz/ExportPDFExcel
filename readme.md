@@ -1,6 +1,7 @@
 ﻿# 📊 ExportPDFExcel: Generación de Reportes en .NET MVC con PostgreSQL, ClosedXML y QuestPDF
 
 ![.NET Version](https://img.shields.io/badge/.NET-8.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 ![NuGet ClosedXML](https://img.shields.io/nuget/v/ClosedXML)
 ![NuGet QuestPDF](https://img.shields.io/nuget/v/QuestPDF)
 ![NuGet Dapper](https://img.shields.io/nuget/v/Dapper)
@@ -161,8 +162,17 @@ Reemplaza `XXXX` por el puerto que indique la consola.
 
 ---
 
+## 🤝 Contribuciones
+
+¿Tienes sugerencias o quieres mejorar este proyecto?  
+¡Abre un issue o envía un pull request!  
+Tu colaboración es más bienvenida que el café de lunes.
+
+---
+
 ## 📚 Licencia
 
+Este proyecto está disponible bajo licencia MIT.  
 ¡Úsalo, mejóralo y compártelo sin miedo!
 
 ---
