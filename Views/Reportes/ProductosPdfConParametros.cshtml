@@ -1,0 +1,20 @@
+﻿@model ExportPDFExcel.ViewModels.ProductoReporteViewModel 
+
+@{
+    ViewData["Title"] = "Reporte de Productos por Stock (PDF)";
+}
+
+<h1>Reporte de Productos por Stock (PDF)</h1>
+
+<form asp-action="ProductosPdfConParametros" method="post">
+    <div class="form-group">
+        <label asp-for="MinStock"></label>
+        <input asp-for="MinStock" class="form-control" />
+        <span asp-validation-for="MinStock" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Generar Reporte PDF</button>
+</form>
+
+<div>
+    <a asp-action="Index">Volver a la lista de reportes</a>
+</div>

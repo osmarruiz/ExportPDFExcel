@@ -1,0 +1,25 @@
+﻿@model ExportPDFExcel.ViewModels.ClienteReporteViewModel 
+
+@{
+    ViewData["Title"] = "Reporte de Clientes por Rango de Fechas (Excel)";
+}
+
+<h1>Reporte de Clientes por Rango de Fechas (Excel)</h1>
+
+<form asp-action="ClientesExcelConParametros" method="post">
+    <div class="form-group">
+        <label asp-for="StartDate"></label> @* <-- Usa asp-for *@
+        <input asp-for="StartDate" class="form-control" /> @* <-- Usa asp-for *@
+        <span asp-validation-for="StartDate" class="text-danger"></span> @* <-- Usa asp-validation-for con la propiedad del modelo *@
+    </div>
+    <div class="form-group mt-3">
+        <label asp-for="EndDate"></label> @* <-- Usa asp-for *@
+        <input asp-for="EndDate" class="form-control" /> @* <-- Usa asp-for *@
+        <span asp-validation-for="EndDate" class="text-danger"></span> @* <-- Usa asp-validation-for con la propiedad del modelo *@
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Generar Reporte Excel</button>
+</form>
+
+<div>
+    <a asp-action="Index">Volver a la lista de reportes</a>
+</div>

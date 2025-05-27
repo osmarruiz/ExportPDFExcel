@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Generar Reportes";
+}
+
+<h1>Generar Reportes</h1>
+<br/>
+<br/>
+
+<div class="row ">
+    <div class="col-md-6">
+        <br/>
+        <h2>Reportes de Productos📦</h2>
+        <hr/>
+        <br/>
+        <br/>
+        <h3>Sin Parámetros</h3>
+        <br/>
+
+        <div class="d-grid gap-3">
+            <a asp-action="ProductosExcel" class="btn btn-primary">Generar Excel de Productos</a>
+            <a asp-action="ProductosPdf" class="btn btn-secondary">Generar PDF de Productos</a>
+        </div>
+        <br/>
+        <h3>Con Parámetros (Stock Mínimo)</h3>
+        <br/>
+        <div class="d-grid gap-3">
+            <a asp-action="ProductosExcelConParametros" class="btn btn-primary">Generar Excel (Con Parámetros)</a>
+            <a asp-action="ProductosPdfConParametros" class="btn btn-secondary">Generar PDF (Con Parámetros)</a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <br/>
+        <h2>Reportes de Clientes👥</h2>
+        <hr/>
+        <br/>
+        <br/>
+        <h3>Sin Parámetros</h3>
+        <br/>
+        <div class="d-grid gap-3">
+            <a asp-action="ClientesExcel" class="btn btn-primary">Generar Excel de Clientes</a>
+            <a asp-action="ClientesPdf" class="btn btn-secondary">Generar PDF de Clientes</a>
+        </div>
+        <br/>
+        <h3>Con Parámetros (Rango de Fechas)</h3>
+        <br/>
+        <div class="d-grid gap-3">
+            <a asp-action="ClientesExcelConParametros" class="btn btn-primary">Generar Excel (Con Parámetros)</a>
+            <a asp-action="ClientesPdfConParametros" class="btn btn-secondary">Generar PDF (Con Parámetros)</a>
+        </div>
+    </div>
+</div>
